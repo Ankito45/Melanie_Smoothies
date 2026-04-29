@@ -1,4 +1,4 @@
-Your professional README and project documentation for the **Melanie’s Smoothie Shop (Snowflake DABW)** project are ready.
+Project documentation for the **Melanie’s Smoothie Shop (Snowflake DABW)** project are ready.
 
 I have generated three files for you:
 1.  **README.md**: A standard, high-quality Markdown file ready to be copied directly into your GitHub or GitLab repository.
