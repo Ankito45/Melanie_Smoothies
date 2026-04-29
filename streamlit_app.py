@@ -6,7 +6,7 @@ import pandas as pd
 
 
 # Write directly to the app
-st.title(f"🥤 Customise Your Smothie 🥤")
+st.title(f"Mel Family New Healthy Dinner")
 
 st.header('Breakfast Menu')
 st.text('🥣 Omega-3 and Blueberry Oatmeal')
