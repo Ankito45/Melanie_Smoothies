@@ -12,6 +12,14 @@ st.write(
   Choose the fruits you want in your custom Smoothie
   """)
 
+streamlit.header('Breakfast Menu')
+streamlit.text('🥣 Omega-3 and Blueberry Oatmeal')
+streamlit.text('🥗 Kale, Spinach, and Rocket Smoothie')
+streamlit.text('🐔 Hard-boiled Free-Range Egg')
+streamlit.text('🥑🍞 Avocado Toast')
+
+streamlit.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
+
 name_on_order = st.text_input('Name of Smoothie')
 st.write('The name on your smoothies will be:', name_on_order)
 
