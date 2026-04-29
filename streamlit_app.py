@@ -7,10 +7,6 @@ import pandas as pd
 
 # Write directly to the app
 st.title(f"🥤 Customise Your Smothie 🥤")
-st.write(
-  """
-  Choose the fruits you want in your custom Smoothie
-  """)
 
 st.header('Breakfast Menu')
 st.text('🥣 Omega-3 and Blueberry Oatmeal')
@@ -19,6 +15,7 @@ st.text('🐔 Hard-boiled Free-Range Egg')
 st.text('🥑🍞 Avocado Toast')
 
 st.header('🍌🥭 Build Your Own Fruit Smoothie 🥝🍇')
+st.write("""Choose the fruits you want in your custom Smoothie""")
 
 name_on_order = st.text_input('Name of Smoothie')
 st.write('The name on your smoothies will be:', name_on_order)
