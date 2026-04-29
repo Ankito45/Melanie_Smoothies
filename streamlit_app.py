@@ -29,22 +29,27 @@ ingredients_list = st.multiselect(
 )
 
 # New Section to display smoothiefront nutrition information
+# New Section to display smoothiefront nutrition information
 if ingredients_list:
-    # st.write(ingredients_list)
-    # st.text(ingredients_list)
-    ingredients_string = ''
+    ingredients_string = ''  # Initialized with one 'i'
   
     for fruit_chosen in ingredients_list:
-        iingredients_string += fruit_chosen + ''
-        search_on=pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
-        # st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
+        # FIX 1: Use the correct variable name (remove the extra 'i')
+        ingredients_string += fruit_chosen + ' ' 
         
+        # FIX 2: Use pf_df (matching what you defined earlier)
+        search_on = pf_df.loc[pf_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
         st.subheader(fruit_chosen + ' Nutrition Information')
-        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/{search_on}")
-        sf_df=st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+        # FIX 3: Use an f-string (f"...") so {search_on} is replaced by the value
+        smoothiefroot_response = requests.get(f"https://my.smoothiefroot.com/api/fruit/{search_on}")
+        # Display the JSON response
+        st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+    
+    # Move the button outside the loop so it only appears once
     time_to_insert = st.button('Submit Order')
 
     if time_to_insert:
+        # Note: Ensure my_insert_stmt is defined before this line!
         session.sql(my_insert_stmt).collect()
-        st.success('Your Smoothie is ordered!', icon="✅")
+        st.success(f'Your Smoothie is ordered, {name_on_order}!', icon="✅")
 
