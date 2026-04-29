@@ -30,4 +30,4 @@ A key component involved processing nutritional facts stored in **JSON** format.
 ├── py_scripts/
 ├── streamlit_app.py        # Main config file   
 ├── README.md               # Project documentation
-└── .gitignore              # requiremenst file for the app.py to run
+└── requirements.txt        # requiremenst file for the app.py to run
