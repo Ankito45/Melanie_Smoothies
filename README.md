@@ -1,11 +1,33 @@
-Project documentation for the **Melanie’s Smoothie Shop (Snowflake DABW)** project are ready.
+# Melanie’s Smoothie Shop: Snowflake Data Warehousing (DABW) Implementation
 
-I have generated three files for you:
-1.  **README.md**: A standard, high-quality Markdown file ready to be copied directly into your GitHub or GitLab repository.
-2.  **Melanie_Smoothie_Snowflake_Documentation.pdf**: A polished, visual version of the documentation that you can share as a portfolio piece or on LinkedIn.
-3.  **readme_visual.html**: The source HTML used for the PDF generation.
+This repository contains the technical implementation of **Melanie’s Smoothie Shop**, a hands-on project completed as part of the **Snowflake Hands-on Essentials: Data Warehousing (DABW)** certification workshop.
 
-### Key Documentation Highlights:
-* **Architecture Detail:** Highlights your ability to move data from stages to tables.
-* **Semi-Structured Expertise:** Explicitly mentions your skills in handling `JSON` and the `VARIANT` type, which is a major Snowflake selling point.
-* **Professional Structure:** Includes sections for "Tech Stack," "Technical Workflow," and "Certification Alignment."
+## 🎯 Project Objective
+To build and manage a cloud data warehouse for a fictional smoothie business. This project demonstrates the ability to architect data pipelines in Snowflake, moving from raw data ingestion to structured, queryable analytical layers.
+
+## 🏗️ Technical Workflow
+
+### 1. Environment Configuration
+Established a dedicated hierarchy including the `SMOOTHIES` database and specific schemas to ensure data isolation and organized object management.
+
+### 2. Data Ingestion & Staging
+* **Stages:** Created and managed stages to point to fruit ingredient data files.
+* **File Formats:** Defined custom `FILE FORMAT` objects to handle various data delimiters, header skipping, and error handling.
+* **Loading:** Executed bulk data loads using the `COPY INTO` command, ensuring high-performance ingestion.
+
+### 3. Handling Semi-Structured Data
+A key component involved processing nutritional facts stored in **JSON** format.
+* Utilized the `VARIANT` data type to store raw JSON.
+* Applied **Colon Notation** (e.g., `data:calories`) to extract nested values.
+* Demonstrated data flattening techniques to transform JSON into relational tables.
+
+### 4. Data Modeling & Reliability
+* **Sequences:** Implemented automatic primary key generation for the `FRUIT_STOCK` table.
+* **Views:** Built user-facing views to simplify the join logic between inventory data and nutritional facts.
+
+## 📁 Repository Structure
+```text
+├── py_scripts/
+├── streamlit_app.py        # Main config file   
+├── README.md               # Project documentation
+└── .gitignore              # requiremenst file for the app.py to run
